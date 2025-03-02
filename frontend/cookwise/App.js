@@ -3,14 +3,13 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons"; 
 import { SafeAreaView, StyleSheet} from 'react-native';
-import TimerPage from './components/Timerpage';
+import TimerPage from './components/TimerPage';
 import HomeScreen from './components/HomeScreen';
+import FavoritesPage from './components/Favoritespage';
 
 const Tab = createBottomTabNavigator();
 
-
 const App = () => {
-  
   return (
     <SafeAreaView style={styles.safeArea}>
       <NavigationContainer>
@@ -22,6 +21,8 @@ const App = () => {
                 iconName = "home";
               } else if (route.name === "Timer") {
                 iconName = "timer";
+              } else if (route.name === "Favorites") {
+                iconName = "heart";  // Heart icon for Favorites
               }
               return <Ionicons name={iconName} size={size} color={color} />;
             },
@@ -30,8 +31,9 @@ const App = () => {
             headerShown: false,
           })}
         >
-          <Tab.Screen name="Home" component={HomeScreen}/>
+          <Tab.Screen name="Home" component={HomeScreen} />
           <Tab.Screen name="Timer" component={TimerPage} />
+          <Tab.Screen name="Favorites" component={FavoritesPage} />  {/* Add Favorites Tab */}
         </Tab.Navigator>
       </NavigationContainer>
 
@@ -39,7 +41,6 @@ const App = () => {
     </SafeAreaView>
   );
 };
-
 
 const styles = StyleSheet.create({
   safeArea: {

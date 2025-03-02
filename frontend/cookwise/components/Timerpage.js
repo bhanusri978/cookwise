@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 
-const TimerPage = () => {
+const Timerpage = () => {
   const [time, setTime] = useState(0); // Time in seconds
   const [isActive, setIsActive] = useState(false); // Timer running state
   const [inputTime, setInputTime] = useState(''); // User input for custom time
@@ -164,4 +164,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TimerPage;
+export default Timerpage;
