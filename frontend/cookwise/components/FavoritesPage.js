@@ -4,8 +4,6 @@ import { View, Text, TouchableOpacity, StyleSheet, FlatList } from 'react-native
 
 const FavoritesPage = () => {
   const [favorites, setFavorites] = useState([]);
-
-  // Add a recipe to the favorites list
   const addToFavorites = (recipe) => {
     setFavorites([...favorites, recipe]);
   };
